@@ -54,7 +54,17 @@ void MainWindow::on_pushButton_encrypt_released()
     }
 
     DESencryptor enc;
-    enc.encrypt(input, key);
+    QString encryptMessage = enc.encrypt(input, key);
+
+    ui->lineEdit_output->setText(encryptMessage);
 
     return;
+}
+
+void MainWindow::on_pushButton_copyToInput_released()
+{
+    if(ui->lineEdit_output->text() == "")
+        return;
+
+    ui->lineEdit_input->setText(ui->lineEdit_output->text());
 }

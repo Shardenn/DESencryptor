@@ -18,6 +18,8 @@ public:
 private slots:
     void on_pushButton_encrypt_released();
 
+    void on_pushButton_copyToInput_released();
+
 private:
     Ui::MainWindow *ui;
     bool checkInput(std::string inp, QString& err);
